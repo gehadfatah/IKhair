@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrainLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bkg_recycler_view_item"
+
+        android:clipToPadding="false"
+        android:padding="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/desc">
+
+            <ImageView
+                android:id="@+id/faceImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/twitImg"
+                android:layout_toLeftOf="@+id/twitImg"
+                android:onClick="@{()->callback.clickFaceShare(model.info)}"
+
+                android:src="@drawable/ic_facebook" />
+
+            <ImageView
+                android:id="@+id/twitImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+                android:onClick="@{()->callback.clickTwitShare(model.info)}"
+                android:src="@drawable/ic_twitter" />
+
+            <ImageView
+                android:id="@+id/shareImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/twitImg"
+                android:layout_toRightOf="@id/twitImg"
+                android:onClick="@{()->callback.clickDefaultShare(model.info)}"
+
+                android:src="@drawable/ic_share" />
+
+            <ImageView
+                android:id="@+id/smsImg"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@id/shareImg"
+                android:layout_toRightOf="@id/shareImg"
+
+                android:onClick="@{()->callback.clickopenSMS(model.info)}"
+                android:src="@drawable/sms" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.info}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:text="ساهم معنا في سد رمق آلاف الاسر المحتاجة التي تتضور جوعاً و ذلك بتوفير الخبز في مشروع الرغيف الخيري الذي اطلقته الهيئة لتصل به الى المحتاجين خارج الدولة" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{model.name}"
+
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="حملة دفئوهم" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.goda.ikhair.model.data_model.Cause" />
+
+        <variable
+            name="callback"
+            type="com.goda.ikhair.presentation.main.cause_list.CauseCallback" />
+
+
+    </data>
+</layout>

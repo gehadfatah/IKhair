@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_xxxx">20dp</dimen>
+    <dimen name="margin_xxx">10dp</dimen>
+    <dimen name="margin_xx">5dp</dimen>
+    <dimen name="margin_x">3dp</dimen>
+    <dimen name="sp_11">11sp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_21">21sp</dimen>
+    <dimen name="button_height_45">45dp</dimen>
+    <dimen name="button_height_40">40dp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_8">8sp</dimen>
+</resources>
