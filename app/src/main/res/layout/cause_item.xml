@@ -20,7 +20,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/desc">
+            app:layout_constraintTop_toBottomOf="@+id/stackedhorizontalprogressbar">
 
             <ImageView
                 android:id="@+id/faceImg"
@@ -66,7 +66,38 @@
                 android:onClick="@{()->callback.clickopenSMS(model.info)}"
                 android:src="@drawable/sms" />
         </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@{String.valueOf(model.targetAmount)}"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tvTargetAmount"
+            style="@style/TitleBarTextAppearance"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            app:progres="@{model}"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tvCollectedAmount"
+            android:textColor="@color/black"
+            style="@style/TitleBarTextAppearance"
+            android:layout_height="wrap_content"/>
+        <github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar
+            android:id="@+id/stackedhorizontalprogressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
 
+            android:progress="@{model.collectedAmount}"
+            android:max="@{model.targetAmount}"
+            app:layout_constraintTop_toBottomOf="@+id/tvTargetAmount"
+            android:progressDrawable="@drawable/stacked_horizontal_progress"/>
+        <!--            android:progress="@{@string/price_format(model.collectedAmount/model.targetAmount)}"
+-->
         <TextView
             android:id="@+id/desc"
             android:layout_width="wrap_content"
@@ -74,13 +105,14 @@
             android:text="@{model.info}"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_15"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName"
             tools:text="ساهم معنا في سد رمق آلاف الاسر المحتاجة التي تتضور جوعاً و ذلك بتوفير الخبز في مشروع الرغيف الخيري الذي اطلقته الهيئة لتصل به الى المحتاجين خارج الدولة" />
 
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center"

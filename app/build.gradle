@@ -74,5 +74,6 @@ dependencies {
 
     kapt 'com.android.databinding:compiler:3.4.0'
     implementation "com.github.hadilq.liveevent:liveevent:1.0.1"
+    implementation 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.3'
 
 }

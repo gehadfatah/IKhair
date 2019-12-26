@@ -16,4 +16,6 @@
     <color name="colorTransparent">#00b75c00</color>
     <color name="colorTransparen2t">#0F1230</color>
     <color name="toolbarTransparent">#00FFFFFF</color>
+
+    <color name="shpbr_primary_progress">#FF0000</color>
 </resources>

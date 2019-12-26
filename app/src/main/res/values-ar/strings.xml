@@ -7,6 +7,7 @@
     <string name="error_occurred">The server is down, please try again later</string>
     <string name="no_connection">No Internet Connection</string>
     <string name="shareSubject">IKhair Share</string>
+    <string name="progress_format">$%,.2f</string>
 
     <string name="time_out_message">Looks like the server is taking to long to respond, this can be caused by either  poor connectivity or an error with our servers. Please try again in a while</string>
 
